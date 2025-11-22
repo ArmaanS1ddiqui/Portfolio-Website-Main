@@ -1,0 +1,46 @@
+/* This animation is the core of the conveyer belt */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Moves the track left by half its width (the width of the original logo set) */
+    transform: translateX(-50%);
+  }
+}
+
+.logo-carousel-container {
+  background: var(--container-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem 0;
+  overflow: hidden; /* Hides the logos that are off-screen */
+  position: relative;
+  width: 100%;
+}
+
+/* We use 'white-space: nowrap' to force all slides onto one line */
+.logo-carousel-track {
+  display: flex;
+  white-space: nowrap;
+  /* Call the animation */
+  animation: scroll 30s linear infinite;
+  width: max-content; /* Makes the track as wide as its content */
+}
+
+.logo-slide {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 3rem; /* Size of the icons */
+  color: var(--text-color-dark);
+  transition: color 0.2s ease;
+}
+
+.logo-slide:hover {
+  color: var(--accent-color);
+}
+
+/* Pause the animation on hover */
+.logo-carousel-container:hover .logo-carousel-track {
+  animation-play-state: paused;
+}

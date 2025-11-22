@@ -1,0 +1,137 @@
+/* =========================================
+   GAMING GALLERY (Cinematic Dark Mode)
+   ========================================= */
+
+.gallery-page {
+  width: 100%;
+  min-height: 100vh;
+  
+  /* --- THE FIX: OVERRIDE GLOBAL THEME --- */
+  background-color: #050505 !important; /* Force Pitch Black */
+  background-image: none !important;    /* KILL THE MANJARO GRID */
+  
+  /* Ensure this page sits on top of the global body background */
+  position: relative; 
+  z-index: 10; 
+  
+  color: #ccc;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+/* Header: Technical Metadata Look */
+.gallery-header {
+  margin-bottom: 2rem; /* Reduced slightly so it sits closer to images */
+  border-bottom: 1px solid #333;
+  padding-bottom: 1rem;
+  
+  /* --- THE ALIGNMENT FIX --- */
+  display: flex;
+  justify-content: space-between; /* Keeps Title Left, Meta Right */
+  align-items: flex-end;          /* Aligns them to the bottom of the text */
+  width: 100%;                    /* Forces it to span the full width */
+  text-align: right;               /* Overrides any global centering */
+  padding-left: 0;                /* Removes accidental padding */
+  padding-right: 0;
+}
+.gallery-page .section-title {
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 400;
+  text-align: left;
+}
+
+.gallery-meta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Collage Grid */
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.spacer {
+  height: 50px;
+}
+
+/* --- VIEWFINDER WRAPPER --- */
+.cinematic-wrapper {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden; 
+}
+
+.corner {
+  position: absolute;
+  width: 20px; height: 20px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 20; /* Corners on top of everything */
+}
+
+.corner.top-left {
+  top: 10px; left: 10px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-left: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.corner.bottom-right {
+  bottom: 10px; right: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Hover: Corners Expand */
+.cinematic-wrapper:hover .corner {
+  width: 100%; height: 100%;
+  border-color: #fff;
+  top: 0; left: 0; bottom: 0; right: 0;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* --- EFFECT: CRT SIGNAL (Scanlines) --- */
+
+.collage-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+/* The Scanline Overlay */
+.cinematic-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Dark scanlines */
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.5) 3px
+  );
+  z-index: 15; /* Sit on top of image */
+  pointer-events: none;
+  opacity: 0.8; /* Visible by default */
+  transition: opacity 0.3s;
+}
+
+/* Hover: Clear Signal */
+.cinematic-wrapper:hover::before {
+  opacity: 0; /* Scanlines vanish */
+}
+
+.cinematic-wrapper:hover .collage-image {
+  filter: brightness(1.1) contrast(1.1);
+  transform: scale(1.02);
+}

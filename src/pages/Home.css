@@ -1,0 +1,409 @@
+ /* Hero Section */
+
+.hero-section {
+
+  padding: 6rem 0; /* Good vertical spacing */
+
+  text-align: center;
+
+ 
+
+  /* --- FIXED: Removed the background gradient --- */
+
+  /* Now the global grid will show perfectly through this section */
+
+  background: transparent;
+
+}
+
+
+
+.hero-name {
+
+  font-size: 2.5rem;
+
+  margin-bottom: 1rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 1rem; /* Space between name and icons */
+
+}
+
+
+
+.hero-icon-link {
+
+  font-size: 1.8rem;
+
+  color: var(--text-color-dark); /* Slate Grey by default */
+
+  transition: all 0.2s ease;
+
+}
+
+
+
+/* The icons now glow Teal on hover */
+
+.hero-icon-link:hover {
+
+  color: var(--accent-color);
+
+  transform: translateY(-2px);
+
+}
+
+
+
+/* Projects Section */
+
+/* Projects Section */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem; /* Increased gap slightly for better look */
+}
+
+.project-card {
+  background: var(--container-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px; 
+  /* Change layout to stack vertically */
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Let content decide height */
+  overflow: hidden; /* Keeps image corners rounded */
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 1. Image Wrapper */
+.card-image-wrapper {
+  width: 100%;
+  height: 180px; /* Fixed height for the image part */
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-image-wrapper {
+  width: 100%;
+  
+  /* --- THE CHANGE --- */
+  height: auto;        /* Remove fixed pixels */
+  aspect-ratio: 1 / 1; /* Forces a perfect square */
+  /* ------------------ */
+  
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: top; 
+  transition: transform 0.3s ease;
+  filter: grayscale(20%);
+}
+
+/* 2. Info Wrapper */
+.card-info {
+  padding: 1.2rem 1rem;
+  text-align: center;
+  background: var(--container-bg);
+}
+
+.card-info h3 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: var(--font-main);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+/* --- HOVER EFFECTS --- */
+.project-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+}
+
+/* Zoom the image slightly */
+.project-card:hover .card-image-wrapper img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+/* Turn text Teal */
+.project-card:hover .card-info h3 {
+  color: var(--accent-color);
+}
+
+
+
+.project-card {
+
+  background: var(--container-bg);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 4px; /* Matching the sharper Manjaro look */
+
+  
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  transition: all 0.2s ease-in-out;
+
+  height: auto; /* Ensure this is auto, not 200px */
+  
+  flex-direction: column;
+
+ 
+
+  /* Optional: Add the grid texture to the cards too, slightly fainter */
+
+  font-family: var(--font-main);
+
+  color: var(--text-color-dark);
+
+}
+
+
+
+.project-card:hover {
+
+  border-color: var(--accent-color);
+
+  transform: translateY(-5px);
+
+  color: var(--accent-color);
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+}
+
+
+
+/* About Section */
+
+.about-box {
+
+  background: var(--container-bg);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 4px;
+
+  padding: 2rem;
+
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  text-align: center;
+
+  color: var(--text-color-dark);
+
+  line-height: 1.8;
+
+}
+
+
+
+/* Responsive Tweaks (Bonus) */
+
+@media (max-width: 768px) {
+
+  .hero-name {
+
+    flex-direction: column; /* Stack name and icons on mobile */
+
+    font-size: 2rem;
+
+  }
+
+ 
+
+  .projects-grid {
+
+    grid-template-columns: 1fr; /* Single column on mobile */
+
+  }
+
+}
+
+
+
+/* === THEME: MANJARO ARCHITECT (Refined) === */
+
+:root {
+
+  /* The Palette */
+
+  --bg-color: #16191a;          /* Deep Dark Slate */
+
+  --text-color: #e2e8f0;        /* Soft, Readable White */
+
+  --text-color-dark: #94a3b8;   /* Muted Slate Blue/Grey */
+
+  --accent-color: #33d17a;      /* Manjaro Teal (Professional, not neon) */
+
+ 
+
+  /* Container Colors */
+
+  --container-bg: #1e2224;      /* Slightly lighter slate for cards */
+
+  --border-color: #2d3538;      /* Subtle borders */
+
+ 
+
+  /* Font */
+
+  --font-main: 'IBM Plex Mono', monospace;
+
+}
+
+
+
+/* === GLOBAL STYLES === */
+
+* {
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  padding: 0;
+
+}
+
+
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+  background-color: var(--bg-color);
+
+  color: var(--text-color);
+
+  font-family: var(--font-main);
+
+  -webkit-font-smoothing: antialiased;
+
+  line-height: 1.6;
+
+
+
+  /* === THE NEW BACKGROUND: TECHNICAL GRID === */
+
+  /* This creates a very subtle 40px grid pattern */
+
+  background-image:
+
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  /* ========================================== */
+
+}
+
+
+
+/* Helper Classes */
+
+.container {
+
+  width: 90%;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 2rem 0;
+
+}
+
+
+
+a {
+
+  color: var(--accent-color);
+
+  text-decoration: none;
+
+  transition: all 0.2s ease-in-out;
+
+}
+
+
+
+a:hover {
+
+  color: var(--text-color);
+
+  text-decoration: underline;
+
+}
+
+
+
+/* Headings */
+
+h1, h2, h3 {
+
+  color: var(--text-color);
+
+  margin-bottom: 1rem;
+
+  font-weight: 500;
+
+}
+
+
+
+/* Section Titles (The "Projects", "Toolkit" headers) */
+
+.section-title {
+
+  text-align: center;
+
+  font-size: 1.5rem;
+
+  margin-bottom: 2rem;
+
+  color: var(--accent-color);
+
+  letter-spacing: 1px;
+
+ 
+
+  /* Optional: Adds a tiny "terminal" underline block */
+
+  display: inline-block;
+
+  width: 100%;
+
+} 

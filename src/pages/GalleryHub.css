@@ -1,0 +1,173 @@
+.gallery-hub {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+  min-height: 80vh;
+}
+
+/* --- Animation Container --- */
+.ascii-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  height: 300px; 
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.hub-ascii {
+  font-family: var(--font-main);
+  color: var(--accent-color);
+  font-size: 1.2rem; 
+  line-height: 1.1; 
+  letter-spacing: 0px; 
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 0 8px var(--accent-color);
+}
+
+/* --- Header --- */
+.hub-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hub-title {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.hub-prompt {
+  color: var(--text-color-dark);
+  font-size: 0.9rem;
+}
+
+/* --- Menu Layout --- */
+.hub-menu-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hub-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+}
+
+.hub-item {
+  background: var(--container-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+/* Hover: Green Border + Slide */
+.hub-item:hover {
+  border-color: var(--accent-color);
+  transform: translateX(5px);
+  box-shadow: -5px 5px 0px rgba(0,0,0,0.2);
+}
+
+.hub-link {
+  display: flex;
+  flex-direction: column; /* Stack Top and Bottom rows */
+  padding: 1.2rem 1.5rem;
+  text-decoration: none;
+  width: 100%;
+  gap: 0.8rem; /* Space between title row and address row */
+}
+
+/* --- ROW 1: TOP (Name | Desc) --- */
+.hub-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap; /* Allow wrapping on tiny phones */
+  gap: 0.5rem;
+}
+
+.hub-left-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hub-right-group {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-align: right;
+}
+
+/* --- ROW 2: BOTTOM (Address) --- */
+.hub-bottom-row {
+  width: 100%;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 0.5rem;
+}
+
+.hub-path {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-color-dark);
+  opacity: 0.7;
+}
+
+/* --- TEXT STYLING --- */
+.folder-icon {
+  font-size: 1.2rem;
+  filter: grayscale(100%);
+  transition: filter 0.2s;
+}
+
+.hub-name {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: var(--font-main);
+}
+
+.hub-tag {
+  font-size: 0.7rem;
+  background: var(--border-color);
+  color: var(--text-color);
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-family: var(--font-main);
+}
+
+.hub-desc {
+  color: var(--text-color-dark);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* --- HOVER COLORS --- */
+.hub-item:hover .hub-name {
+  color: var(--accent-color);
+}
+
+.hub-item:hover .folder-icon {
+  filter: grayscale(0%);
+}
+
+.hub-item:hover .hub-tag {
+  background: var(--accent-color);
+  color: var(--bg-color); 
+}
+
+/* Responsive Tweak */
+@media (max-width: 600px) {
+  .hub-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hub-right-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

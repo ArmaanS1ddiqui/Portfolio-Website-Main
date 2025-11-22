@@ -1,0 +1,68 @@
+.game-slider {
+  margin-bottom: 5rem;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+.game-slider-title {
+  color: #fff; /* Force White */
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.slider-count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  color: #666; /* Force Grey */
+}
+
+.slider-body {
+  position: relative;
+  width: 100%;
+}
+
+/* Clean Floating Buttons */
+.slider-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 25; /* High Z-Index to sit above CRT effects */
+  opacity: 0;
+}
+
+/* Show arrows only when hovering the wrapper */
+.slider-body:hover .slider-btn {
+  opacity: 1;
+}
+
+.slider-btn:hover {
+  color: #fff;
+  background: rgba(0,0,0,0.5); /* Darken background on hover */
+}
+
+.slider-btn.left {
+  left: 0;
+}
+
+.slider-btn.right {
+  right: 0;
+}

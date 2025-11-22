@@ -1,0 +1,283 @@
+.about-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+  /* Uses global grid background automatically */
+}
+
+.dossier-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Left side fixed width, right side fills */
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* --- LEFT COLUMN: ID CARD --- */
+.dossier-sidebar {
+  position: relative;
+}
+
+.id-card {
+  background: var(--container-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 4px;
+  position: sticky;
+  top: 100px; /* Sticks when you scroll */
+}
+
+.id-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  color: var(--text-color-dark);
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.id-status {
+  color: var(--accent-color);
+  animation: blink 2s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0.5; } }
+
+.id-photo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #000;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.id-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.1);
+}
+
+/* Cool scanline effect over photo */
+.scan-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent-color);
+  opacity: 0.5;
+  box-shadow: 0 0 10px var(--accent-color);
+  animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+.id-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  color: var(--text-color);
+}
+
+.id-role {
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.id-meta p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-color-dark);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.id-specs {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.id-specs h4 {
+  font-size: 0.8rem;
+  color: var(--text-color-dark);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.id-specs ul {
+  list-style: none;
+  font-size: 0.85rem;
+}
+
+.id-specs li {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+.id-specs span {
+  color: var(--accent-color);
+}
+
+/* --- RIGHT COLUMN: CONTENT --- */
+.dossier-section {
+  margin-bottom: 3rem;
+}
+
+.dossier-section h3 {
+  color: var(--text-color-dark);
+  font-size: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Bio Text */
+.bio-text p {
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+/* Skill Bars */
+.skill-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.skill-track {
+  height: 8px;
+  background: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: var(--accent-color);
+  position: relative;
+}
+
+/* Add a little glowing tip to the skill bar */
+.skill-fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: #fff;
+  box-shadow: 0 0 10px #fff;
+}
+
+/* Mission Cards */
+.mission-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.mission-card {
+  background: var(--container-bg);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+}
+
+.mission-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.mission-id {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.mission-status {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+
+.mission-status.pending { background: #555; color: #ccc; }
+.mission-status.planning { background: #f1c40f; color: #000; }
+.mission-status.in_progress { background: var(--accent-color); color: #000; }
+
+.mission-date {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.mission-body p {
+  font-size: 0.9rem;
+  color: var(--text-color-dark);
+}
+
+/* Responsive Mobile */
+@media (max-width: 800px) {
+  .dossier-grid {
+    grid-template-columns: 1fr; /* Stack them */
+  }
+  
+  .id-card {
+    position: static; /* Stop sticking on mobile */
+  }
+}
+/* --- EXPORT BUTTON --- */
+.id-export {
+  margin-top: 1.5rem;
+}
+
+.export-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 1rem;
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.export-btn:hover {
+  background: var(--accent-color);
+  color: var(--bg-color); /* Invert colors */
+  box-shadow: 0 0 15px rgba(51, 209, 122, 0.4); /* Glow based on your accent */
+}
+
+.export-btn:active {
+  transform: scale(0.98);
+}
