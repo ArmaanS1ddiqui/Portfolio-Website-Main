@@ -1,6 +1,7 @@
 import React from "react";
 import { aboutData } from "../data/aboutData";
 import { FaMapMarkerAlt, FaBuilding, FaMicrochip } from "react-icons/fa";
+import profileImg from "../data/Profile_photo.jpg";
 import "./About.css";
 
 const About = () => {
@@ -20,10 +21,7 @@ const About = () => {
               </div>
 
               <div className="id-photo">
-                <img
-                  src="https://media.licdn.com/dms/image/v2/D5603AQHsEfzmGatP4A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1725755211157?e=1765411200&v=beta&t=FKpDJO6d5vD_JWbWFCh4NS8oJ1YDdGWvXCKF5Uc4gmo"
-                  alt="Armaan"
-                />
+                <img src={profileImg} alt="Armaan" />
                 <div className="scan-line"></div>
               </div>
 
