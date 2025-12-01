@@ -17,7 +17,7 @@ const Home = () => {
         <h1 className="hero-name">
           Armaan Aijaz Siddiqui
           <a
-            href="https://linkedin.com/in/your-profile"
+            href="https://www.linkedin.com/in/armaan-aijaz-siddiqui-0b11751b9/"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-icon-link"
@@ -25,7 +25,7 @@ const Home = () => {
             <FaLinkedin />
           </a>
           <a
-            href="https://steamcommunity.com/id/your-profile"
+            href="https://steamcommunity.com/id/Armaanical/"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-icon-link"
@@ -49,7 +49,7 @@ const Home = () => {
             2000,
             "// Automation Expert",
             2000,
-            "// Problem Solver",
+            "// Dev-Ops Enthusiast",
             2000,
           ]}
           wrapper="span"
