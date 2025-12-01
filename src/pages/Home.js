@@ -98,7 +98,7 @@ const Home = () => {
 
       {/* SECTION 4: ABOUT */}
       <section className="container">
-        <h2 className="section-title">/ ABOUT</h2>
+        <h2 className="section-title">ABOUT</h2>
         <div className="about-box">
           <DecryptedText />
         </div>
