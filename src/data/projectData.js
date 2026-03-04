@@ -76,4 +76,16 @@ export const projectsData = [
     tech: ["Python", "Azure VM", "Ubuntu", "Gemini API"],
     link: "https://github.com/ArmaanS1ddiqui/Discord-Assistant-AI",
   },
+  {
+    id: 8,
+    title: "AI-Powered Customer Success Automation Engine",
+    shortDescription:
+      "Automated n8n pipeline integrating Google Gemini to analyze client metrics and dispatch personalized HTML reports.",
+    longDescription:
+      "Engineered an end-to-end n8n automation engine to extract weekly adoption metrics and generate personalized client reports via the Gmail API. Integrated Google Gemini LLM to analyze complex usage trends and dynamically generate targeted feature recommendations. Wrote custom JavaScript to sanitize unpredictable AI JSON outputs and implemented sequential looping architectures to bypass strict API rate limits.",
+    imageUrl:
+      "https://portfoliostora.blob.core.windows.net/images/Metrics%20automation.png",
+    tech: ["n8n", "JavaScript", "Gemini API", "HTML/CSS", "REST APIs"],
+    link: "#",
+  },
 ];

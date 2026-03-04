@@ -31,11 +31,11 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             {/* This is the new part: Nested Creative Routes */}
             <Route path="/about" element={<About />} />
-            <Route path="/terminal" element={<Terminal />} />
             <Route path="/gallery" element={<GalleryHub />} />
             <Route path="/gallery/gaming" element={<GamingGallery />} />
             <Route path="/gallery/blender" element={<BlenderGallery />} />
             <Route path="/gallery/videos" element={<VideoEdits />} />{" "}
+            <Route path="/terminal" element={<Terminal />} />
           </Routes>
         </main>
 

@@ -32,6 +32,26 @@ export const blenderData = [
     ],
   },
   {
+    id: "Goblin",
+    title: "Goblin Bust",
+    description:
+      "// Game-ready assets. Low poly structure with high-res baking.",
+    media: [
+      {
+        type: "image",
+        url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/b737bf245176607.69a7f08717483.png",
+      },
+      {
+        type: "image",
+        url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/1ee259245176607.69a7f08716f07.png",
+      },
+      {
+        type: "image",
+        url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/fc3fc8245176607.69a7f08717c03.png",
+      },
+    ],
+  },
+  {
     id: "LIGHTHOUSE",
     title: "The Lighthouse",
     description: "// Atmospheric lighting study & ocean simulation.",

@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-left">Armaan's Portfolio Version 1.02</div>
+        <div className="footer-left">Armaan's Portfolio Version 1.2</div>
         <div className="footer-right">
           <Link to="/" className="footer-link">
             Home
