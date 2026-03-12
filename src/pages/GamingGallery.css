@@ -44,9 +44,9 @@
 }
 
 .gallery-meta {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
-  color: #666;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  color: var(--text-color-dark);
   margin: 0;
 }
 
@@ -108,29 +108,7 @@
   transition: all 0.3s ease;
 }
 
-/* The Scanline Overlay */
-.cinematic-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  /* Dark scanlines */
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 2px,
-    rgba(0, 0, 0, 0.5) 3px
-  );
-  z-index: 15; /* Sit on top of image */
-  pointer-events: none;
-  opacity: 0.8; /* Visible by default */
-  transition: opacity 0.3s;
-}
-
-/* Hover: Clear Signal */
-.cinematic-wrapper:hover::before {
-  opacity: 0; /* Scanlines vanish */
-}
-
+/* Hover effect for clarity */
 .cinematic-wrapper:hover .collage-image {
   filter: brightness(1.1) contrast(1.1);
   transform: scale(1.02);

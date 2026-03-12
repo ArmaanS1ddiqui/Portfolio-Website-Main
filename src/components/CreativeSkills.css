@@ -10,7 +10,7 @@
 .creative-skill-card {
   background: var(--container-bg);
   border: 1px solid var(--border-color);
-  border-radius: 4px; /* Matching the Manjaro sharper look */
+  border-radius: 0; /* Sharp corners */
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
@@ -28,10 +28,10 @@
 }
 
 .skill-name {
-  font-size: 1.1rem;
-  font-family: var(--font-main);
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  font-size: 1.6rem; /* Bigger for the blocky Jersey 15 font */
+  font-family: var(--font-logo); /* Using the thick pixel font requested */
+  font-weight: 400;
+  letter-spacing: 1.5px;
   text-align: center;
   transition: color 0.3s ease;
 }
@@ -40,13 +40,14 @@
 .creative-skill-card:hover {
   border-color: var(--accent-color);
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(165, 161, 255, 0.3); /* Subtle Glowing effect */
 }
 
-/* Turn text and icon Teal on hover, matching the theme */
+/* Turn text and icon glowing green on hover */
 .creative-skill-card:hover .skill-name,
 .creative-skill-card:hover .skill-icon {
   color: var(--accent-color);
+  text-shadow: none; /* Removed the blurry glow */
 }
 
 /* Slight growth animation on icon hover */

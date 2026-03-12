@@ -19,11 +19,12 @@
 
 .id-card {
   background: var(--container-bg);
-  border: 1px solid var(--border-color);
+  border: 2px dashed var(--border-color); /* HUD dotted/dashed main border */
+  box-shadow: 0 0 10px rgba(165, 161, 255, 0.1); /* Soft purple CRT glow */
   padding: 1.5rem;
-  border-radius: 4px;
+  border-radius: 0;
   position: sticky;
-  top: 100px; /* Sticks when you scroll */
+  top: 100px;
 }
 
 .id-header {
@@ -58,7 +59,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%) contrast(1.1);
+  border-radius: 0;
+  /* Retro CRT Green phosphor effect for the profile photo */
+  filter: grayscale(100%) contrast(150%) brightness(80%) sepia(100%) hue-rotate(80deg);
 }
 
 /* Cool scanline effect over photo */
@@ -66,9 +69,9 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: var(--accent-color);
+  background: #39ff14; /* Neon Green */
   opacity: 0.5;
-  box-shadow: 0 0 10px var(--accent-color);
+  box-shadow: 0 0 10px #39ff14;
   animation: scan 3s linear infinite;
 }
 
@@ -133,11 +136,14 @@
 }
 
 .dossier-section h3 {
-  color: var(--text-color-dark);
-  font-size: 1rem;
-  border-bottom: 1px solid var(--border-color);
+  color: var(--accent-color);
+  font-family: var(--font-header);
+  font-size: 1.2rem;
+  border-bottom: 2px dashed var(--border-color);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
+  text-shadow: var(--neon-shadow);
+  word-spacing: 5px; /* Adds extra gap in silkscreen headers */
 }
 
 /* Bio Text */
@@ -172,6 +178,7 @@
   height: 100%;
   background: var(--accent-color);
   position: relative;
+  box-shadow: 0 0 8px var(--accent-color); /* Added internal glow */
 }
 
 /* Add a little glowing tip to the skill bar */
@@ -193,10 +200,10 @@
 
 .mission-card {
   background: var(--container-bg);
-  border: 1px solid var(--border-color);
+  border: 1px dashed var(--border-color);
   padding: 1rem;
-  border-radius: 4px;
-  transition: transform 0.2s;
+  border-radius: 0;
+  transition: all 0.2s ease-in-out;
 }
 
 .mission-card:hover {
@@ -275,7 +282,7 @@
 .export-btn:hover {
   background: var(--accent-color);
   color: var(--bg-color); /* Invert colors */
-  box-shadow: 0 0 15px rgba(51, 209, 122, 0.4); /* Glow based on your accent */
+  box-shadow: 0 0 8px rgba(165, 161, 255, 0.4); /* Glow based on your accent */
 }
 
 .export-btn:active {

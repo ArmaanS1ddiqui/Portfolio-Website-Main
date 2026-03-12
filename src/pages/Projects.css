@@ -100,7 +100,7 @@
   padding: 0; 
   background: var(--container-bg); /* #2d2d2d */
   border: 1px solid var(--border-color); /* #444 */
-  border-radius: 4px; /* Slight rounded corners to match Home */
+  border-radius: 0; /* Sharp corners to match HUD */
   position: relative;
   overflow: hidden; 
   transition: 
@@ -112,17 +112,17 @@
 /* --- HOVER EFFECT --- */
 .timeline-content:hover {
   border-color: var(--accent-color); /* Blue Border */
-  /* Softer shadow, less "blocky" */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+  /* Softer shadow */
+  box-shadow: 0 0 10px rgba(165, 161, 255, 0.2); 
   transform: scale(1.1); 
 }
 
 /* Terminal Header: Blends better with grey */
 .terminal-header {
-  background: rgba(0, 0, 0, 0.2); /* Darker shade of container */
+  background: rgba(0, 0, 0, 0.4); /* Darker shade of container */
   color: var(--text-color-dark);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
+  font-family: var(--font-header);
+  font-size: 0.8rem;
   padding: 8px 12px;
   border-bottom: 1px solid var(--border-color);
   display: flex;
@@ -162,10 +162,11 @@ h3 {
   padding: 1rem 1rem 0.5rem 1rem;
   margin: 0;
   color: var(--text-color);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-header);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.1rem;
+  text-shadow: none; /* No blur on project cards */
 }
 
 h3::before {
@@ -214,8 +215,8 @@ h3::before {
 }
 
 .tech-tag {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.7rem;
+  font-family: var(--font-main);
+  font-size: 1rem;
   color: var(--text-color-dark);
   background: rgba(255,255,255,0.05); 
   border: 1px solid var(--border-color);
@@ -247,7 +248,7 @@ h3::before {
 
 .project-link-btn:hover {
   background: var(--accent-color);
-  color: var(--bg-color); /* Invert colors: Dark text on Teal bg */
-  box-shadow: 0 0 10px var(--accent-color);
+  color: var(--bg-color); /* Invert colors: Dark text on Purple bg */
+  box-shadow: 0 0 10px rgba(165, 161, 255, 0.4);
   text-decoration: none;
 }
