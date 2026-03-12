@@ -6,7 +6,7 @@ const DecryptedText = () => {
 
   // Professional, concise bio
   const realText =
-    "Software Engineer & DevOps enthusiast. Building scalable web applications, automating workflows, and managing infrastructure. My stack revolves around Python, SQL, Docker, and React. Focused on clean code, system efficiency, and solving actual problems.";
+    "Curiosity has always been the common thread behind the things I enjoy working on. I’m drawn to building and experimenting — whether that’s with technology, automation, data-driven ideas, or visual media. Over the years I’ve spent a lot of time learning video editing and exploring different ways of telling stories through visuals, and more recently experimenting with tools like Blender and small technical projects.Most of what I create starts as curiosity rather than a finished plan. This website is simply a space to document those experiments, ideas, and things I’m learning along the way — from automation and data exploration to creative projects. Some of it may turn into something bigger, and some may remain experiments, but the process of building and exploring is what keeps me interested.";
 
   // Generate a static "Encrypted" version of the same length
   // We use a function so it matches the length perfectly

@@ -1,41 +1,50 @@
-import React from "react";
-import { Link } from "react-router-dom"; // Use Link for internal navigation
-import "./navbar.css"; // We'll create this CSS file next
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "./navbar.css";
 
 const Navbar = () => {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+  const closeMobileMenu = () => setClick(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
+        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
           Armaan_Config
         </Link>
-        <ul className="nav-menu">
+        <div className="menu-icon" onClick={handleClick}>
+          {click ? <FaTimes /> : <FaBars />}
+        </div>
+        <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
-            <Link to="/" className="nav-links">
+            <Link to="/" className="nav-links" onClick={closeMobileMenu}>
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/projects" className="nav-links">
+            <Link to="/projects" className="nav-links" onClick={closeMobileMenu}>
               Projects
             </Link>
           </li>
-
           <li className="nav-item">
-            <Link to="/about" className="nav-links">
+            <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
               About
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/terminal" className="nav-links">
-              Terminal
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/gallery" className="nav-links">
+            <Link to="/gallery" className="nav-links" onClick={closeMobileMenu}>
               Gallery
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/terminal" className="nav-links" onClick={closeMobileMenu}>
+              Terminal
+            </Link>
+          </li>
+          
         </ul>
       </div>
     </nav>

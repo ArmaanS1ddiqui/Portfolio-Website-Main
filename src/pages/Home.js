@@ -2,6 +2,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import { FaLinkedin, FaSteam, FaGithub } from "react-icons/fa";
 import LogoCarousel from "../components/LogoCarousel";
+import CreativeSkillsGrid from "../components/CreativeCarousel";
 import DecryptedText from "../components/DecryptedText";
 import { projectsData } from "../data/projectData";
 import "./Home.css";
@@ -45,11 +46,13 @@ const Home = () => {
           sequence={[
             "// Deployment Consultant",
             2000,
-            "// Full-Stack Developer",
+            "// Automation Engineer",
             2000,
-            "// Automation Expert",
+            "// Video Editor",
             2000,
-            "// Dev-Ops Enthusiast",
+            "// 3D Modeler",
+            2000,
+            "// Data Analyst",
             2000,
           ]}
           wrapper="span"
@@ -90,13 +93,19 @@ const Home = () => {
         </div>
       </section>
 
-      {/* SECTION 3: TOOLKIT */}
+      {/* SECTION 3: TECHNICAL SKILLS */}
       <section className="container">
-        <h2 className="section-title">Toolkit</h2>
+        <h2 className="section-title">Technical Skills</h2>
         <LogoCarousel />
       </section>
 
-      {/* SECTION 4: ABOUT */}
+      {/* SECTION 4: CREATIVE SKILLS */}
+      <section className="container">
+        <h2 className="section-title">Creative Skills</h2>
+        <CreativeSkillsGrid />
+      </section>
+
+      {/* SECTION 5: ABOUT */}
       <section className="container">
         <h2 className="section-title">ABOUT</h2>
         <div className="about-box">

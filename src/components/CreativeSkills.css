@@ -1,0 +1,76 @@
+.creative-skills-grid {
+  display: grid;
+  /* Adjusts the number of columns automatically, ensuring each item is at least 200px wide */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.creative-skill-card {
+  background: var(--container-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 4px; /* Matching the Manjaro sharper look */
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  color: var(--text-color-dark);
+  cursor: pointer;
+}
+
+.skill-icon {
+  font-size: 3.5rem; /* Large icon size */
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  font-family: var(--font-main);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.creative-skill-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Turn text and icon Teal on hover, matching the theme */
+.creative-skill-card:hover .skill-name,
+.creative-skill-card:hover .skill-icon {
+  color: var(--accent-color);
+}
+
+/* Slight growth animation on icon hover */
+.creative-skill-card:hover .skill-icon {
+  transform: scale(1.1);
+}
+
+/* Responsive Tweaks for Mobile */
+@media screen and (max-width: 768px) {
+  .creative-skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Allow two side-by-side on very small screens */
+    gap: 1rem;
+  }
+
+  .creative-skill-card {
+    padding: 1.5rem 0.5rem; /* Less padding on small screens */
+  }
+
+  .skill-icon {
+    font-size: 2.2rem; /* Significantly smaller icon on mobile */
+    margin-bottom: 0.8rem;
+  }
+
+  .skill-name {
+    font-size: 0.95rem; /* Slightly smaller text */
+  }
+}
