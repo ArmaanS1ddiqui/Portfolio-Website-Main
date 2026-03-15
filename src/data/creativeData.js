@@ -35,7 +35,7 @@ export const blenderData = [
     id: "Goblin",
     title: "Goblin Bust",
     description:
-      "// Game-ready assets. Low poly structure with high-res baking.",
+      "// High-res organic sculpt. Digital clay topology study focusing on fantasy anatomy and detailed texturing.",
     media: [
       {
         type: "image",
@@ -48,6 +48,30 @@ export const blenderData = [
       {
         type: "image",
         url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/fc3fc8245176607.69a7f08717c03.png",
+      },
+    ],
+  },
+  {
+    id: "Room",
+    title: "Low Poly Interior Diorama",
+    description:
+      "// Isometric spatial study. Minimalist geometry focusing on clean topology, soft shadows, and balanced composition.",
+    media: [
+      {
+        type: "image",
+        url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/0fbe0b245839339.69b6a19977d34.png",
+      },
+      {
+        type: "image",
+        url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/fa6e13245839339.69b6a19977351.png",
+      },
+      {
+        type: "image",
+        url: "http://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/86ec1f245839339.69b6a199781fa.png",
+      },
+      {
+        type: "image",
+        url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_webp/069c18245839339.69b6a19977896.png",
       },
     ],
   },
